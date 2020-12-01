@@ -1,5 +1,5 @@
 {
-  "name": "battleship-game-engine",
+  "name": "noobtenluka-battleship-game-engine",
   "version": "1.0.0",
   "description": "A simple game engine, which lets you exposes easy to use function around the classic battleship game",
   "main": "lib/index.js",

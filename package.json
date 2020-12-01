@@ -1,12 +1,47 @@
 {
   "name": "battleship-game-engine",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple game engine, which lets you exposes easy to use function around the classic battleship game",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "keywords": [
+    "battleship",
+    "game-engine",
+    "game",
+    "engine"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoobTenLuka/battleship-game-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NoobTenLuka/battleship-game-engine/issues"
+  },
+  "homepage": "https://github.com/NoobTenLuka/battleship-game-engine#readme",
+  "author": "NoobTenLuka",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.16",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {},
+  "files": [
+    "lib/**/*"
+  ]
 }
